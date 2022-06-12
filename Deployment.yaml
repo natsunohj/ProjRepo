@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx-pod
+  template:
+    metadata:
+      name: project-webserver
+      labels:
+        app: nginx-pod
+    spec:
+      containers:
+      - name: pj-websrv-ctn
+        image: 814667018602.dkr.ecr.ap-northeast-1.amazonaws.com/project/app:1.0
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m
