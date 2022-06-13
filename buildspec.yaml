@@ -29,7 +29,7 @@ phases:
       - sed -i.bak 's#AWS_ECR_URI#'"$AWS_ECR_URI"'#' ./EKS/deploy.yaml
       - sed -i.bak 's#DATE_STRING#'"$DATE"'#' ./EKS/deploy.yaml
       
-      - kubectl delete -f ./EKS/deploy.yaml
-      - kubectl delete -f ./EKS/svc.yaml
+#      - kubectl delete -f ./EKS/deploy.yaml
+#      - kubectl delete -f ./EKS/svc.yaml
       - kubectl apply -f ./EKS/deploy.yaml
       - kubectl apply -f ./EKS/svc.yaml
