@@ -6,12 +6,12 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: project-work-cluster
+      app: proj
   template:
     metadata:
       name: project-webserver
       labels:
-        app: project-work-cluster
+        app: proj
     spec:
       containers:
       - name: pj-websrv-ctn
